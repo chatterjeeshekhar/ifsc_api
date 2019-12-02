@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.db.models import Q
 from django.template import loader
-from .models import IFSC
+from .models import ifscsearch
 import json
 
 def index(request):
@@ -12,7 +12,7 @@ def search(request):
     return_list = []
     query=request.GET.get('q')
     if query:
-        ifsc = IFSC.objects.all().filter(Q(ifsc__icontains=query) |
+        ifsc = ifscsearch.objects.all().filter(Q(ifsc__icontains=query) |
                                             Q(bank_id__icontains=query) |
                                             Q(branch__icontains=query) |
                                             Q(address__icontains=query) |

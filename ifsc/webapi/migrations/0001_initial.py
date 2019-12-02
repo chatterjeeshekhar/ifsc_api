@@ -12,9 +12,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='IFSC',
+            name='ifscsearch',
             fields=[
-                ('ifsc', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ifsc')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False)),
+                ('ifsc', models.CharField(max_length=15)),
                 ('bank_id', models.CharField(max_length=3)),
                 ('branch', models.CharField(max_length=30)),
                 ('address', models.CharField(max_length=200)),

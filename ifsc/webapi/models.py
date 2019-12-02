@@ -1,8 +1,8 @@
 from django.db import models
 
 
-class IFSC(models.Model):
-    ifsc = models.AutoField(max_length=30)
+class ifscsearch(models.Model):
+    ifsc = models.CharField(max_length=30)
     bank_id = models.CharField(max_length=3)
     branch = models.CharField(max_length=30)
     address = models.CharField(max_length=200)

@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'ifsc.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'sqlify-export-f670339311a24.sql'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fyle',
+        'USER': 'fylehq',
+        'PASSWORD': 'Ringo1',
+        'HOST': 'mydbserver.hostdude.org',
+        'PORT': '3306',
     }
 }
 

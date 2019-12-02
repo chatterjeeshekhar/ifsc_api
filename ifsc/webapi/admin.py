@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import IFSC
+from .models import ifscsearch
 
-admin.site.register(IFSC)
+admin.site.register(ifscsearch)
