@@ -25,21 +25,23 @@ def search(request):
     data = {}
     for each in ifsc:
         try:
-            data[each.bank_name].append({'ifsc' : each.ifsc,
+            data[each.id].append({'ifsc' : each.ifsc,
                                     'bank_id' : each.bank_id,
                                     'branch' : each.branch,
                                     'address' : each.address,
                                     'city' : each.city,
                                     'district' : each.district,       
-                                    'state' : each.state})
+                                    'state' : each.state,
+                                    'bank_name' : each.bank_name})
         except KeyError:
-            data[each.bank_name].append({'ifsc' : each.ifsc,
+            data[each.id].append({'ifsc' : each.ifsc,
                                     'bank_id' : each.bank_id,
                                     'branch' : each.branch,
                                     'address' : each.address,
                                     'city' : each.city,
                                     'district' : each.district,       
-                                    'state' : each.state})
+                                    'state' : each.state,
+                                    'bank_name' : each.bank_name})
     context = {
         'data' : json.dumps(data),
     }
