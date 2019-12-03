@@ -5,7 +5,8 @@ from .models import ifscsearch
 import json
 
 def index(request):
-    return HttpResponse("Shekhar's API for Bank IFSC Search")
+    template=HttpResponse('<title>IFSC API</title><font face="Arial"><h2>API for IFSC</h2>Search Endpoint: /search?q=ICICI</font>')
+    return template
 
 def search(request):
     template=loader.get_template('webapi/search.html')
@@ -25,7 +26,7 @@ def search(request):
     data = {}
     for each in ifsc:
         try:
-            data[each.id].append({'ifsc' : each.ifsc,
+            data[each.ifsc].append({'ifsc' : each.ifsc,
                                     'bank_id' : each.bank_id,
                                     'branch' : each.branch,
                                     'address' : each.address,
@@ -43,6 +44,6 @@ def search(request):
                                     'state' : each.state,
                                     'bank_name' : each.bank_name})
     context = {
-        'data' : json.dumps(data),
+        'data' : (ifsc),
     }
     return HttpResponse(template.render(context, request))

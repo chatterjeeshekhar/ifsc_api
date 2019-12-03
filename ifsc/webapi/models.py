@@ -11,4 +11,4 @@ class ifscsearch(models.Model):
     state = models.CharField(max_length=200)
     bank_name = models.CharField(max_length=100)
     def __str__(self):
-        return self.bank_name
+        return self.ifsc

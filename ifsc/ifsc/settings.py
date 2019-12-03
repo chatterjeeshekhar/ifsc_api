@@ -82,7 +82,13 @@ DATABASES = {
         'PASSWORD': 'Ringo1',
         'HOST': 'mydbserver.hostdude.org',
         'PORT': '3306',
-    }
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
+    },
+    'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+    },
 }
 
 
